@@ -13,7 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- short, sweet and descriptive titles -->
     <title>CSC102 Home Page</title>
-
     <!-- add a link to the css file -->
     <link rel="stylesheet" href="main.css"
 </head>
@@ -34,6 +33,15 @@
     </div>
 
     <H2> There are four pillars of programming</H2>
+    <h2>Play my game.</h2>
+    <button onclick="playDiceGame();">Play Game</button>
+    <div id="divMessage">Waiting for the game start</div>
+    <div id="divRoll1"></div>
+    <div id="divRoll2"></div>
+    <div id="divSum"></div>
+
+    <!-- Link to the game logic. -->
+    <script src="script.js"></script>
 
     <h3> Variables </h3>
     <!-- the script tags specify that we are now coding with Javascript -- a whole new set of rules apply here in Javascript -->
@@ -51,11 +59,60 @@
         // let is the best way to create a Javascript variable
         let firstName = "Aedan";
 
+    // var and let are basically equivalent for the purposes of this class - but use let, cause it's better
         var lastName = "Gamble";
     </script>
 
     <h3> Decision logic (if/else) </h3>
+    
+    
     <h3> Functions </h3>
+
+    <script>
+        /* let's talk about functions - functions are a way to organize chunks of code; functions also allow us to 
+        write code 1 time and reuse it as many times as we need to */
+        // When creatin ga function in Javascript, use the keyword function to let the interpreter know that you are creating a reusable chunk of code
+        // We create a descriptive name for what our function will do; most o fhte time our function names should include a verb; start function names with a letter, you can use numbers and _
+        // camelCase or snake_case for namign styles - use whichever one you want but stay consistent
+        // After the function name, use parentheses ( ) whether or not you are passing values into the function
+        // the function code must be placed within curly braces { }
+        function addNumbers(){
+            // create 2 variables so we can add them together
+            let number1 = 5; // we are hard-coding the value of 5 here
+            let number2 = "eight";
+
+            // create another variable to hold the sum
+            let sum = number1 + number2;
+
+            // let's write out the sum to the console
+            // to concatenate (add text together), you can use + or ,
+            console.log("the sum is: " + sum)
+        }
+
+        //shit line of code, calls the function so that we can test it
+        addNumbers();
+    </script>
+    <h3>Decision Logic (if/else)</h3>
+    <script>
+        // when testing an if statement, make sure to use == (equality) instead of = (assignment: this will change the value of the variable, which you probably do not want.)
+        // in an if chunk of code, you will have one and only one if statement, you can have as many else if as needdd, and optionally 1 else statement.
+    //    && is and - both conditions must evaluate to true
+    // || is or - only one condition must evaluate to true
+
+        if(firstName == "Aedan" && lastname == "Gamble"){
+        // since the value in firstName is Aedan, this code will run
+        console.log("Aedan is here")
+        }
+        else if (firstName == "Aedan2"){
+        console.log("Aedan2 is here")
+        }
+        
+        // else is a catch-all so when the if statement evaluates to false, the else will run
+        else{
+            console.log("Aedan is NOT here")
+        }
+    </script>
+    
     <h3> Loops </h3>
     <!--  -->
 </body>
