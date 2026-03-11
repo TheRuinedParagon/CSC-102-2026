@@ -1,0 +1,87 @@
+<!-- Aedan Gamble, CSC102 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Validation</title>
+    <link rel="stylesheet" href="main2.css" >
+</head>
+<body>
+    <header>
+        <h1>Input Validation</h1>
+    </header>
+    <main>
+        <form>
+            <!-- add div tags around each label/input combo so that they are on the line together; labels and inputs are inline elements; div is block -->
+            <!-- this is the input for the first name -->
+             <div>
+            <label for="txtFirstName">First Name: </label>
+            <input type="text" id="txtFirstName">
+            </div>
+
+            <!-- this is the input for the last name -->
+             <div>
+                <label for="txtLastName">Last Name: </label>
+                <input type="text" id="txtLastName">
+             </div>
+
+             <div>
+                <label for="txtZip">Zip Code: </label>
+                <input type="text" id="txtZip">
+             </div>
+
+             <!-- use a button to validate the form, set the type to button so clicking does not submit the form -->
+              <button type="button" onclick="validate();">Validate!</button>
+        </form>
+        <div id="secretMessage"></div>
+    </main>
+
+    <script>
+        // this function will validate the user input based on the requirements of the client (assignment requirements)
+        function validate(){
+            // first name variable
+            let firstName = document.getElementById("txtFirstName").value;
+        
+            // show the first name in the console
+            console.log("firstName: " + firstName);
+
+            // last name variable
+            let lastName = document.getElementById("txtLastName").value;
+
+            // show the last name in the console
+            console.log("lastName: " + lastName);
+
+            // zip code variable
+            let zip = document.getElementById("txtZip").value;
+
+            // show the zip in the console
+            console.log("zip= " + zip);
+
+            // create a variable to hold the first name + " " + last name
+            let fullName = firstName + " " + lastName;
+
+            console.log("fullName= " + fullName);
+
+            // we need to make sure the full name does not exceed 20 characters
+            if (fullName.length == 1 || fullName.length > 20){
+                message = "Please enter a name that is less than 20 characters.";
+
+            }
+            else{
+                document.getElementById("secretMessage").textContent = "You win!"
+            }
+
+            console.log("message= " + message);
+
+            if (zip.length == 1 || zip.length > 5){
+                message = "Please enter a valid ZIP code that is 5 digits long.";
+            }
+
+            console.log("message= " + message);
+        }
+
+    </script>
+    
+</body>
+</html>
