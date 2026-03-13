@@ -25,15 +25,20 @@
         <h1>Welcome to CSC102 landing page</h1>
     </header>
 
+    <button id="btnStart" onclick="startImageMove();">Relocate Image</button>
+    <button id="btnStop" onclick="stopImageMove();" disabled>Stop Relocating Image</button>
+    
     <div>
         <p>
             <img id="memeImage"
-            src="g3sdt1soji2a1.jpg" width="300">
+            src="g3sdt1soji2a1.jpg" width="200">
         </p>
     </div>
 
     <H2> There are four pillars of programming</H2>
+    
     <h2>Play my game.</h2>
+    
     <button onclick="playDiceGame();">Play Game</button>
     <div id="divMessage">Waiting for the game start</div>
     <div id="divRoll1"></div>

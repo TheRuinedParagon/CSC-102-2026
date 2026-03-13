@@ -25,10 +25,50 @@ function playDiceGame(){
     }
 
     document.getElementById("divRoll1").textContent = "dice roll 1: " + roll1;
-    document.getElementById("divRoll2").textContent = "dice roll 1: " + roll2;
+    document.getElementById("divRoll2").textContent = "dice roll 2: " + roll2;
     document.getElementById("divSum").textContent = "Sum: " + rollSum;
     
 }
+
+// create a variable to track the current interval ID (returned from the setInterval function)
+        let intervalId = 0;
+        // create the function to move the image
+        function startImageMove(){
+            // we are creating a variable that is a shortcut/nick for our HTML image element.
+            let memeImage = document.getElementById("memeImage");
+            
+            // setInterval allows us to repeatedly run code
+            // function() is an anonymous function - a way to run a chunk of code 1 time as a function argument.
+            intervalId = setInterval(function(){
+                // get a random number for top and left coordinates
+                let topCoord = getRandomPixels();
+                let leftCoord = getRandomPixels();
+
+                memeImage.style.left = topCoord + "px";
+                memeImage.style.top = leftCoord + "px";
+            }, 1000); // 1000 milliseconds = 1 second
+
+            // enable the Stop button
+            document.getElementById("btnStop").disabled = false;
+
+            // disable the start button
+            document.getElementById("btnStart").disabled = true;
+        }
+
+        // build a function to get a random number
+        function getRandomPixels(){
+            // I'm picking 800 As the max number - I'll adjust accordingly based on what my screen size is.
+            return Math.floor(Math.random() * 500);
+        }
+        // create the function that stops the image's movement
+        function stopImageMove(){
+            // call a built-in javascript function that stops setInterval from running
+            clearInterval(intervalId);
+            
+
+            document.getElementById("btnStop").disabled = true;
+            document.getElementById("btnStart").disabled = false;
+        }
 
 // function will generate a random number between 1 and 6
 function getRandomNumber(){
