@@ -41,3 +41,37 @@ footer{
     text-align: center;
     margin-right: 200px;
 }
+
+table{
+            border: 2px solid whitesmoke;
+            /* this will cause multiple overlapping borders to collapse into a single border */
+            border-collapse: collapse;
+        }
+
+        tr{
+            border: 2px solid whitesmoke;
+            border-collapse: collapse;
+        }
+
+        td{
+            padding: 5px;
+        }
+        tr:nth-child(odd){
+            background-color: black;
+            color: whitesmoke;
+        }
+
+        tr:hover{
+            background-color: whitesmoke;
+            color: black;
+        }
+
+        tr:nth-child(even){
+            background-color: black;
+            color: whitesmoke;
+        }
+
+        tr:hover{
+            background-color: whitesmoke;
+            color: black;
+        }
