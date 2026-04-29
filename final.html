@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aedan's Important Things</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<h1>Aedan's Links and Accomplishments</h1>
+<main>
+    <div id="greeting">Welcome to my page, visitor! Below are three buttons
+    that will provide you with various information on
+    their held topics. Feel free to click any of them!</div>
+    <div id="pixInfo" hidden>Pixilart was one of my first ever internet presences. I made a lot of friends, and art as well on it. 
+        Nowadays, I simply remember it as a terrible cesspool of drama and hate. I don't recommend staying there for long, but if you'd like, you can!
+
+    </div>
+
+    <div id="tcfInfo" hidden>TCF is basically my second home of 8 years, nearly half my whole life! I've survived multiple 
+        generations of users coming through the site, and while it pains me to see old friends come and go, I always am there to guide the newcomers.
+    </div>
+
+    <div id="accInfo" hidden>Here are some images and other assortments of files of things I've made on college grounds! I'm very proud of all of them, so enjoy perusing them.</div>
+</main>
+<body>
+    
+    <button id="btnPix" onclick="pixilart();">Pixilart details</button>
+    <button id="btnTcf" onclick="terrariaForum();">TCF details</button>
+    <button id="btnAcc" onclick="accomplishments();">My accomplishments</button>
+    <button id="btnBack" onclick="goBack();" hidden>Go back</button>
+
+    <script>
+        function pixilart(){
+            document.getElementById("greeting").hidden = true;
+            document.getElementById("pixInfo").hidden = false;
+            document.getElementById("btnTcf").hidden = true;
+            document.getElementById("btnPix").hidden = true;
+            document.getElementById("btnAcc").hidden = true;
+            document.getElementById("btnBack").hidden = false;
+            document.getElementById("btnLink").hidden = false;
+        }
+
+        function terrariaForum(){
+            document.getElementById("greeting").hidden = true;
+            document.getElementById("tcfInfo").hidden = false;
+            document.getElementById("btnTcf").hidden = true;
+            document.getElementById("btnPix").hidden = true;
+            document.getElementById("btnAcc").hidden = true;
+            document.getElementById("btnBack").hidden = false;
+            document.getElementById("btnLink").hidden = true;
+            document.getElementById("btnLink2").hidden = false;
+        }
+
+        function accomplishments(){
+            document.getElementById("greeting").hidden = true;
+            document.getElementById("accInfo").hidden = false;
+            document.getElementById("btnTcf").hidden = true;
+            document.getElementById("btnPix").hidden = true;
+            document.getElementById("btnBack").hidden = false;
+            document.getElementById("btnAcc").hidden = true;
+            document.getElementById("Ring").hidden = false;
+            document.getElementById("Plane").hidden = false;
+            document.getElementById("btnAddAudio").hidden = false;
+            document.getElementById("divAudio").hidden = false;
+        }
+
+        function goBack(){
+            document.getElementById("greeting").hidden = false;
+            document.getElementById("tcfInfo").hidden = true;
+            document.getElementById("accInfo").hidden = true;
+            document.getElementById("pixInfo").hidden = true;
+            document.getElementById("btnTcf").hidden = false;
+            document.getElementById("btnPix").hidden = false;
+            document.getElementById("btnAcc").hidden = false;
+            document.getElementById("btnBack").hidden = true;
+            document.getElementById("btnLink").hidden = true;
+            document.getElementById("btnLink2").hidden = true;
+            document.getElementById("Ring").hidden = true;
+            document.getElementById("Plane").hidden = true;
+            document.getElementById("btnAddAudio").hidden = true;
+            document.getElementById("divAudio").hidden = true;
+        }
+
+        function redirectPIX(){
+
+            window.location.href = "https://www.pixilart.com/teruinedparagon";
+            return;
+            }
+
+        function redirectTCF(){
+
+            window.location.href = "https://forums.terraria.org/index.php?members/theruinedparagon-zen.113444/";
+            return;
+            }
+        
+        function addAudio(){
+        let divAudio = document.getElementById("divAudio");
+
+        let audioElement = document.createElement("audio");
+
+        audioElement.setAttribute("id", "myAudio");
+
+        audioElement.setAttribute("src", "gloomtune.mp3");
+
+        audioElement.setAttribute("controls", "controls");
+
+        audioElement.volume = .75;
+
+        divAudio.appendChild(audioElement);
+
+        document.getElementById("btnAddAudio").hidden = true;
+        }
+    </script>
+</body>
+<button id="btnLink" onclick="redirectPIX();" hidden>Link to site!</button>
+<button id="btnLink2" onclick="redirectTCF();" hidden>Link to site!</button>
+<div>
+    <p>
+        <img id="Ring"
+            src="img_3902.jpg" width="200" hidden>
+
+        <img id="Plane"
+        src="IMG_9351.jpg" width="200" hidden>
+        
+        <div>
+            <div id="divAudio"></div>
+            
+        <button id="btnAddAudio" onclick="addAudio();" hidden>Add Audio!</button>
+        </div>
+    </p>
+</div>
+</html>
