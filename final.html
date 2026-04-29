@@ -21,6 +21,15 @@
     </div>
 
     <div id="accInfo" hidden>Here are some images and other assortments of files of things I've made on college grounds! I'm very proud of all of them, so enjoy perusing them.</div>
+    <!-- table - specify ID so we can add data to it through javascript -->
+        <table id="tblData" hidden>
+            <tr>
+                <th>Project</th>
+                <th>Category</th>
+                <th>Class</th>
+                <th>Description</th>
+            </tr>
+        </table>
 </main>
 <body>
     
@@ -29,87 +38,8 @@
     <button id="btnAcc" onclick="accomplishments();">My accomplishments</button>
     <button id="btnBack" onclick="goBack();" hidden>Go back</button>
 
-    <script>
-        function pixilart(){
-            document.getElementById("greeting").hidden = true;
-            document.getElementById("pixInfo").hidden = false;
-            document.getElementById("btnTcf").hidden = true;
-            document.getElementById("btnPix").hidden = true;
-            document.getElementById("btnAcc").hidden = true;
-            document.getElementById("btnBack").hidden = false;
-            document.getElementById("btnLink").hidden = false;
-        }
-
-        function terrariaForum(){
-            document.getElementById("greeting").hidden = true;
-            document.getElementById("tcfInfo").hidden = false;
-            document.getElementById("btnTcf").hidden = true;
-            document.getElementById("btnPix").hidden = true;
-            document.getElementById("btnAcc").hidden = true;
-            document.getElementById("btnBack").hidden = false;
-            document.getElementById("btnLink").hidden = true;
-            document.getElementById("btnLink2").hidden = false;
-        }
-
-        function accomplishments(){
-            document.getElementById("greeting").hidden = true;
-            document.getElementById("accInfo").hidden = false;
-            document.getElementById("btnTcf").hidden = true;
-            document.getElementById("btnPix").hidden = true;
-            document.getElementById("btnBack").hidden = false;
-            document.getElementById("btnAcc").hidden = true;
-            document.getElementById("Ring").hidden = false;
-            document.getElementById("Plane").hidden = false;
-            document.getElementById("btnAddAudio").hidden = false;
-            document.getElementById("divAudio").hidden = false;
-        }
-
-        function goBack(){
-            document.getElementById("greeting").hidden = false;
-            document.getElementById("tcfInfo").hidden = true;
-            document.getElementById("accInfo").hidden = true;
-            document.getElementById("pixInfo").hidden = true;
-            document.getElementById("btnTcf").hidden = false;
-            document.getElementById("btnPix").hidden = false;
-            document.getElementById("btnAcc").hidden = false;
-            document.getElementById("btnBack").hidden = true;
-            document.getElementById("btnLink").hidden = true;
-            document.getElementById("btnLink2").hidden = true;
-            document.getElementById("Ring").hidden = true;
-            document.getElementById("Plane").hidden = true;
-            document.getElementById("btnAddAudio").hidden = true;
-            document.getElementById("divAudio").hidden = true;
-        }
-
-        function redirectPIX(){
-
-            window.location.href = "https://www.pixilart.com/teruinedparagon";
-            return;
-            }
-
-        function redirectTCF(){
-
-            window.location.href = "https://forums.terraria.org/index.php?members/theruinedparagon-zen.113444/";
-            return;
-            }
+    <script src="final.js"> 
         
-        function addAudio(){
-        let divAudio = document.getElementById("divAudio");
-
-        let audioElement = document.createElement("audio");
-
-        audioElement.setAttribute("id", "myAudio");
-
-        audioElement.setAttribute("src", "gloomtune.mp3");
-
-        audioElement.setAttribute("controls", "controls");
-
-        audioElement.volume = .75;
-
-        divAudio.appendChild(audioElement);
-
-        document.getElementById("btnAddAudio").hidden = true;
-        }
     </script>
 </body>
 <button id="btnLink" onclick="redirectPIX();" hidden>Link to site!</button>
@@ -127,6 +57,7 @@
             
         <button id="btnAddAudio" onclick="addAudio();" hidden>Add Audio!</button>
         </div>
+        
     </p>
 </div>
 </html>
